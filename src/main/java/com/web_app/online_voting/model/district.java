@@ -5,6 +5,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection = "district")
 public class district {
+
     @Id
     public String id;
     public String districtCode;
