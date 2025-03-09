@@ -14,6 +14,10 @@ public class VoterService {
     private VoterRepository voterRepository;
 
     public voter registerVoter(voter voter) {
+        voter v = voterRepository.findByVoterEmail(voter.voterEmail);
+        if(v != null) {
+            throw new RuntimeException("voter already exists");
+        }
         return voterRepository.insert(voter);
     }
 
